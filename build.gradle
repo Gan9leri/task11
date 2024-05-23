@@ -8,6 +8,7 @@ allure {
         version.set("2.27.0")
     }
     adapter { // отвечает за появление папочки build/allure-results
+        aspectjVersion.set("1.9.22")
         aspectjWeaver.set(true) //обработка аннотации @Step
         frameworks {
             junit5 { //название фреймворка
