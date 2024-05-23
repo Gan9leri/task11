@@ -15,10 +15,26 @@ dependencies {
     )
 }
 
-test{
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
 compileTestJava {
     options.encoding = 'UTF-8'
+}
+
+task fullRegistrationTests(type: Test) {
+    useJUnitPlatform {
+        includeTags("form")
+    }
 }
