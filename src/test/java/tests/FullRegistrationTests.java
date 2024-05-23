@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 @Tag("form")
+@DisplayName("Тесты для формы https://demoqa.com/automation-practice-form")
 public class FullRegistrationTests extends TestBase {
     RegistrationPage steps = new RegistrationPage();
     DataGeneration data = new DataGeneration();
