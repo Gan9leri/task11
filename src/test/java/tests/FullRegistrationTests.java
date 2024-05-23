@@ -1,6 +1,7 @@
 package tests;
 
 import data.DataGeneration;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -8,6 +9,7 @@ public class FullRegistrationTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     DataGeneration data = new DataGeneration();
 
+    @DisplayName("Полное заполнение формы")
     @Test
     void fullRegistration() {
 
@@ -39,6 +41,7 @@ public class FullRegistrationTests extends TestBase {
                         .checkResult("State and City", data.userState + " " + data.userCity);
     }
 
+    @DisplayName("Минимальное заполнение формы")
     @Test
     void partialRegistration() {
         registrationPage.openPage()
@@ -52,6 +55,7 @@ public class FullRegistrationTests extends TestBase {
                         .checkResult("Mobile", data.userPhone);
     }
 
+    @DisplayName("Некорректное заполнение формы")
     @Test
     void incorrectRegistration() {
         registrationPage.openPage()
