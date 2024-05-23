@@ -122,7 +122,7 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Проверка полей результирующей страницы {key} : {value}")
+    @Step("Проверка полей результирующей страницы - {key} : {value}")
     public RegistrationPage checkResult(String key, String value) {
         tableResponsive.$(byText(key)).parent()
                 .shouldHave(text(value));
