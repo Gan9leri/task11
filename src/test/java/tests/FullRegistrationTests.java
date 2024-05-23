@@ -2,9 +2,11 @@ package tests;
 
 import data.DataGeneration;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+@Tag("form")
 public class FullRegistrationTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     DataGeneration data = new DataGeneration();
