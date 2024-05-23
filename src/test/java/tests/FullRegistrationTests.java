@@ -8,14 +8,14 @@ import pages.RegistrationPage;
 
 @Tag("form")
 public class FullRegistrationTests extends TestBase {
-    RegistrationPage registrationPage = new RegistrationPage();
+    RegistrationPage steps = new RegistrationPage();
     DataGeneration data = new DataGeneration();
 
     @DisplayName("Полное заполнение формы")
     @Test
     void fullRegistration() {
 
-        registrationPage.openPage()
+        steps.openPage()
                         .setFirstName(data.firstName)
                         .setLastName(data.lastName)
                         .setUserEmail(data.userMail)
@@ -46,7 +46,7 @@ public class FullRegistrationTests extends TestBase {
     @DisplayName("Минимальное заполнение формы")
     @Test
     void partialRegistration() {
-        registrationPage.openPage()
+        steps.openPage()
                         .setFirstName(data.firstName)
                         .setLastName(data.lastName)
                         .setGender(data.userGender)
@@ -60,7 +60,7 @@ public class FullRegistrationTests extends TestBase {
     @DisplayName("Некорректное заполнение формы")
     @Test
     void incorrectRegistration() {
-        registrationPage.openPage()
+        steps.openPage()
                 .setFirstName(data.firstName)
                 .setLastName(data.lastName)
                 .setGender(data.userGender)
